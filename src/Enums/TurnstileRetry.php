@@ -4,9 +4,8 @@ declare(strict_types=1);
 
 namespace l3aro\FilamentTurnstile\Enums;
 
-enum TurnstileTheme: string
+enum TurnstileRetry: string
 {
     case Auto = 'auto';
-    case Light = 'light';
-    case Dark = 'dark';
+    case Never = 'never';
 }

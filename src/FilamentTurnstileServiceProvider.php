@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace l3aro\FilamentTurnstile;
 
 use Livewire\Features\SupportTesting\Testable;
@@ -16,13 +18,8 @@ class FilamentTurnstileServiceProvider extends PackageServiceProvider
 
     public function configurePackage(Package $package): void
     {
-        /*
-         * This class is a Package Service Provider
-         *
-         * More info: https://github.com/spatie/laravel-package-tools
-         */
         $package->name(static::$name)
-            ->hasInstallCommand(function (InstallCommand $command) {
+            ->hasInstallCommand(function (InstallCommand $command): void {
                 $command
                     ->publishConfigFile()
                     ->askToStarRepoOnGitHub('l3aro/filament-turnstile');
@@ -45,9 +42,9 @@ class FilamentTurnstileServiceProvider extends PackageServiceProvider
 
     public function packageRegistered(): void {}
 
+    #[\Override]
     public function packageBooted(): void
     {
-        // Testing
         Testable::mixin(new TestsFilamentTurnstile());
     }
 }

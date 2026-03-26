@@ -23,7 +23,49 @@
                     'error-callback': function () {
                         $wire.set('{{ $getStatePath() }}', null)
                     },
+                    'expired-callback': function () {
+                        $wire.set('{{ $getStatePath() }}', null)
+                    },
+                    'timeout-callback': function () {
+                        $wire.set('{{ $getStatePath() }}', null)
+                    },
                 }
+
+                @if($getAppearance())
+                    options['appearance'] = '{{ $getAppearance() }}'
+                @endif
+
+                @if($getExecution())
+                    options['execution'] = '{{ $getExecution() }}'
+                @endif
+
+                @if($getRetry())
+                    options['retry'] = '{{ $getRetry() }}'
+                @endif
+
+                @if($getRetryInterval() !== null)
+                    options['retry-interval'] = {{ $getRetryInterval() }}
+                @endif
+
+                @if($getRefreshExpired())
+                    options['refresh-expired'] = '{{ $getRefreshExpired() }}'
+                @endif
+
+                @if($getRefreshTimeout())
+                    options['refresh-timeout'] = '{{ $getRefreshTimeout() }}'
+                @endif
+
+                @if($getTurnstileAction())
+                    options['action'] = '{{ $getTurnstileAction() }}'
+                @endif
+
+                @if($getCData())
+                    options['cData'] = '{{ $getCData() }}'
+                @endif
+
+                @if($getFeedbackEnabled() !== null)
+                    options['feedback-enabled'] = {{ $getFeedbackEnabled() ? 'true' : 'false' }}
+                @endif
 
                 // Render widget when Turnstile API is ready
                 const renderWidget = () => {

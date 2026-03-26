@@ -1,9 +1,9 @@
 <?php
 
+declare(strict_types=1);
+
 namespace l3aro\FilamentTurnstile\Tests;
 
-use BladeUI\Heroicons\BladeHeroiconsServiceProvider;
-use BladeUI\Icons\BladeIconsServiceProvider;
 use Filament\Actions\ActionsServiceProvider;
 use Filament\FilamentServiceProvider;
 use Filament\Forms\FormsServiceProvider;
@@ -14,18 +14,14 @@ use Filament\Tables\TablesServiceProvider;
 use Filament\Widgets\WidgetsServiceProvider;
 use Livewire\LivewireServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
-use RyanChandler\BladeCaptureDirective\BladeCaptureDirectiveServiceProvider;
 use l3aro\FilamentTurnstile\FilamentTurnstileServiceProvider;
 
 class TestCase extends Orchestra
 {
-    protected function getPackageProviders($app)
+    protected function getPackageProviders($app): array
     {
         return [
             ActionsServiceProvider::class,
-            BladeCaptureDirectiveServiceProvider::class,
-            BladeHeroiconsServiceProvider::class,
-            BladeIconsServiceProvider::class,
             FilamentServiceProvider::class,
             FormsServiceProvider::class,
             InfolistsServiceProvider::class,
@@ -38,11 +34,5 @@ class TestCase extends Orchestra
         ];
     }
 
-    public function getEnvironmentSetUp($app)
-    {
-        /*
-        $migration = include __DIR__.'/../database/migrations/create_filament-turnstile_table.php.stub';
-        $migration->up();
-        */
-    }
+    public function getEnvironmentSetUp($app): void {}
 }
