@@ -9,7 +9,7 @@
 ## Code Style
 - **PHP**: 8.2+ with strict typing and PSR-4 autoloading
 - **Formatting**: Laravel Pint with "per" preset (4-space indentation, UTF-8, LF endings)
-- **Static analysis**: PHPStan level 4
+- **Static analysis**: PHPStan level 5
 - **Testing**: Pest framework with descriptive test names
 - **Naming**: PascalCase for classes, camelCase for methods/properties, SCREAMING_SNAKE_CASE for constants
 - **Imports**: Group by type (classes, functions, constants) with blank lines between groups

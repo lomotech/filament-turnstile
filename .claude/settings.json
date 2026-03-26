@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(composer test)",
+      "Bash(composer analyse)",
+      "Bash(composer format)",
+      "Bash(vendor/bin/pest*)",
+      "Bash(vendor/bin/phpstan*)",
+      "Bash(vendor/bin/pint*)",
+      "Bash(git status*)",
+      "Bash(git log*)",
+      "Bash(git diff*)",
+      "Bash(git add*)",
+      "Bash(git commit*)"
+    ]
+  }
+}
